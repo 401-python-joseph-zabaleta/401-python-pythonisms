@@ -1,5 +1,9 @@
 from functools import wraps
 
+def proclaim(txt):
+    return txt
+
+
 def emphasize(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -12,30 +16,28 @@ def emphasize(func):
 
     return wrapper
 
-def sarcastic_decorator(func):
+
+def sarcastic(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         orig_val = func(*args, **kwargs)
-        return f'Sure, I\'d love to do "{orig_val}"'
+        return f'{orig_val}{orig_val}'
 
     return wrapper
 
 
+def reverse_letters(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        
+        output = ''
+        
+        orig_val = func(*args, **kwargs)
 
 
-# @emphasize
-@sarcastic_decorator
-def proclaim(txt):
-    # print('proclaim starting')
-    return txt
-
-@sarcastic_decorator
-@emphasize
-def restaurant_suggestion(cuisine):
-    return cuisine
-
-if __name__ == "__main__":
-    # print(proclaim('spam is better than eggs'))
-    # print(proclaim("Want to go for a walk?"))
-
-    print(restaurant_suggestion('Mexican'))
+        for char in range(len(orig_val) - 1, -1, -1):
+            output += orig_val[char]
+        
+        return output
+    
+    return wrapper
