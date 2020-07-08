@@ -2,7 +2,7 @@
 
 ## Open Git Pull Requests  
 
-
+[https://github.com/joseph-zabaleta/pythonisms/pull/1](https://github.com/joseph-zabaleta/pythonisms/pull/1)  
 
 ## Overview  
 Python has many elegant features that can show the difference between a “programmer who uses Python” and a true “Pythonista”
